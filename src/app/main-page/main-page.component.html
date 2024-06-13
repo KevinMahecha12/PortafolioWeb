@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS y dependencias de jQuery y Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-BJDbgNJuS5yrHm8pV+o6BsWM2A7nQeO39B+8+ogk1WwPw6pif2S4w4RDX4QExX4E" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-uaGE/G2wCwk6E+8Y3GXpDzFVr3RyuSa19FpL4Y1P2Q8t2FRTZ+8xgvmM+RM2A7J5" crossorigin="anonymous"></script>
+
+    <title>Kevin Mahecha | Portafolio.</title>
+    <link rel="stylesheet" href="main-page.component.css">
+    <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Hello World";
+        }
+    </script>
+</head>
+<body>
+ 
+    <header>
+        <h1 class="outfit-titulosgrisfondoNombre">Kevin Mahecha</h1>
+        <h1 class="outfit-titulosgrisfondo">Portafolio</h1>
+        <div class="menuheader"  [class.active]="menuActivo">
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobremi">Sobre mi</a></li>
+                    <li><a href="#exp">Experiencia</a></li>
+                    <li><a href="#conocimientos">Conocimientos</a></li>
+                    <li><a href="#proyectos">Proyectos realizados</a></li>
+                    <button (click)="desplegarmenu()" class="icon-button">
+                        <img src="assets/desplegar.png" alt="Icono Desplegar">
+                    </button>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="Inicio">
+            <div class="mainInfoContainer">
+                <div class="image-container">
+                    <img class="circular--square imgCenterContainer" src="assets/FOTO_CV.jpg" alt="Retrato.">
+                    <h1 class="center-text">Kevin Giovanni Mahecha Cabuto</h1>
+                </div>
+                
+                <div class="contenedorinformacion">
+                  <div class="container">
+                    <h1 class="outfit-titulosgrisfondo">Carrusel de Secciones</h1>
+                    <ngb-carousel *ngIf="slides.length > 0" [showNavigationArrows]="true" [showNavigationIndicators]="false" [interval]="5000" [wrap]="true">
+                      <ng-template ngbSlide *ngFor="let slide of slides">
+                        <div class="custom-slide">
+                          <div class="slide-content">
+                            <p *ngIf="slide.id === 1" class="outfit-titulosgrisfondo">
+                              Soy Ingeniero en desarrollo de software poniendo la disciplina y autodidactismo como la principal causa de desempeñarme eficazmente en lo que hago, busco crecer profesional y laboralmente aportando mis conocimientos y obteniendo muchos más en el transcurso para potenciar mi desempeño en las actividades en las que deba centrarme.
+                            </p>
+                            <p *ngIf="slide.id === 2" class="outfit-titulosgrisfondo">
+                         
+                             
+                            
+                            </p>
+                            <p *ngIf="slide.id === 3" class="outfit-titulosgrisfondo">
+                              Contenido del slide 3
+                            </p>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-carousel>
+                  </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="acerca-des">
+            <h2>Sobre mi</h2>
+            <p>Esta es una sección acerca de mí.</p>
+        </section>
+        <section id="contactos">
+            <h2>Contacto</h2>
+            <p>Puedes contactarme a través de este formulario.</p>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <br>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mi Página Web</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,246 @@
+.outfit-titulos {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+  }
+  .outfit-titulosgrisfondo {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    color: white;
+    font-style: normal;
+    text-align: center;
+  }
+
+.circular--square {  
+    border-top-left-radius: 0% 50%; 
+    border-top-right-radius: 50% 50%; 
+    border-bottom-right-radius: 50% 50%; 
+    border-bottom-left-radius: 50% 50%; 
+    
+}
+.mainInfoContainer {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+  }
+.imgCenterContainer  {
+    margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.contenedorinformacion{
+    width: 100%;
+    height: auto;
+    background-color: #1A1A1A;
+    
+}
+
+.image-container {
+ margin-left: auto;
+  margin-right: auto;
+  display: block;
+  }
+  h1 {
+    color: black; 
+    font-weight: bold; 
+    text-align: center;
+}
+li a {
+    text-decoration: none;
+    color: inherit;
+}
+nav ul {
+    list-style-type: none; 
+    padding: 0; 
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+* { 
+    margin: 0; 
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+ 
+ header .outfit-titulosgrisfondoNombre  {
+    padding-top: 4%;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    color: white;
+    font-style: normal;
+    font-size: 7vh;
+  }
+  header .outfit-titulosgrisfondo  {
+    padding-bottom: 4%;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    color: white;
+    font-style: normal;
+    font-size: 7vh;
+  }
+header {
+    background-color: #1A1A1A;
+    height: auto;
+    width: 100%;
+    position: fixed;
+    align-content: center;
+}
+.menuheader ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    justify-content: center; 
+}
+
+main {
+  padding-top: 50vh;
+}
+.menuheader ul li{
+    display: inline-block;
+    margin: 20px;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 250;
+    color: rgb(5, 5, 5);
+    font-style: normal;
+    font-size: 2.5vh;
+}
+.menuheader{
+    background-color: white;
+    margin: 0;
+    width: 100%;
+    position: flex;
+    height: auto;
+    top:6vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none; 
+    display: none;
+}
+
+
+.mainInfoContainer {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; 
+}
+/*min-width IGUAL O MAYOR*/
+/*max-width IGUAL O MENOR*/
+@media (max-width:900px) {
+    header .outfit-titulosgrisfondo {
+      padding-top: 4%;
+      padding-bottom: 4%;
+      font-family: "Outfit", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      color: white;
+      font-size: 5vh;
+      text-align: center;
+      font-style: normal;
+    }
+  
+    .menuheader ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .icon-button {
+      padding: 15px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: -2.5vh;
+      margin-top: 0.2vh;
+    }
+  
+    header .outfit-titulosgrisfondoNombre {
+      padding-top: 4%;
+      font-family: "Outfit", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      color: white;
+      font-style: normal;
+      text-align: center;
+      font-size: 7vh;
+    }
+  
+    .icon-button img {
+      width: 15px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .menuheader ul li {
+      display: none; /* Oculta todos los elementos por defecto */
+    }
+  
+    .menuheader ul li:first-child {
+      display: inline-block; /* Muestra solo el primer elemento */
+      position: relative; /* Para posicionar el ícono dentro */
+    }
+  
+    .menuheader.active ul {
+      flex-direction: column; /* Alinea los elementos en columna */
+      align-items: center; /* Centra los elementos */
+    }
+  
+    .menuheader.active ul li {
+      display: block; /* Muestra todos los elementos cuando el menú está activo */
+    }
+  
+    .menuheader.active ul li:first-child {
+      position: relative; /* Ajusta la posición del ícono cuando se despliegan los elementos */
+    }
+  
+    .menuheader.active ul li:first-child::after {
+      transform: rotate(180deg); /* Gira la flecha hacia arriba cuando se despliegan los elementos */
+    }
+  
+    .mainInfoContainer {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        display: inline;
+        justify-content: space-between; 
+    }
+  
+    .image-container {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+  
+    .center-text {
+      text-align: center;
+      color: black;
+      font-weight: bold;
+    }
+  }
+  
+  
+
+
