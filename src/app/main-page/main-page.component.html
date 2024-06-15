@@ -25,17 +25,19 @@
 </head>
 <body>
  
-    <header>
-        <h1 class="outfit-titulosgrisfondoNombre">Kevin Mahecha</h1>
-        <h1 class="outfit-titulosgrisfondo">Portafolio</h1>
-        <div class="menuheader"  [class.active]="menuActivo">
+    <header id="headerInicio">
+        <h1 class="outfit-titulosgrisfondoNombre">Kevin Giovanni Mahecha Cabuto</h1>
+        <h1 class="outfit-titulosgrisfondo3">Ingeniero en desarrollo de software</h1>
+    
+        <div class="menuheader" [class.active]="menuActivo">
             <nav>
                 <ul>
-                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#">Inicio</a></li>
                     <li><a href="#sobremi">Sobre mi</a></li>
                     <li><a href="#exp">Experiencia</a></li>
                     <li><a href="#conocimientos">Conocimientos</a></li>
                     <li><a href="#proyectos">Proyectos realizados</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                     <button (click)="desplegarmenu()" class="icon-button">
                         <img src="assets/desplegar.png" alt="Icono Desplegar">
                     </button>
@@ -43,62 +45,181 @@
             </nav>
         </div>
     </header>
+    
+    <header class="sticky-header" id="headerDespuesScroll">
+        <div class="menuheader" [class.active]="menuActivo">
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#sobremi">Sobre mi</a></li>
+                    <li><a href="#exp">Experiencia</a></li>
+                    <li><a href="#conocimientos">Conocimientos</a></li>
+                    <li><a href="#proyectos">Proyectos realizados</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <button (click)="desplegarmenu()" class="icon-button">
+                        <img src="assets/desplegar.png" alt="Icono Desplegar">
+                    </button>
+                </ul>
+            </nav>
+        </div>
 
+    </header>
+    
+    
     <main>
-        <section id="Inicio">
-            <div class="mainInfoContainer">
-                <div class="image-container">
-                    <img class="circular--square imgCenterContainer" src="assets/FOTO_CV.jpg" alt="Retrato.">
-                    <h1 class="center-text">Kevin Giovanni Mahecha Cabuto</h1>
-                </div>
-                
-                <div class="contenedorinformacion">
-                  <div class="container">
-                    <h1 class="outfit-titulosgrisfondo">Carrusel de Secciones</h1>
-                    <ngb-carousel *ngIf="slides.length > 0" [showNavigationArrows]="true" [showNavigationIndicators]="false" [interval]="5000" [wrap]="true">
-                      <ng-template ngbSlide *ngFor="let slide of slides">
-                        <div class="custom-slide">
-                          <div class="slide-content">
-                            <p *ngIf="slide.id === 1" class="outfit-titulosgrisfondo">
-                              Soy Ingeniero en desarrollo de software poniendo la disciplina y autodidactismo como la principal causa de desempeñarme eficazmente en lo que hago, busco crecer profesional y laboralmente aportando mis conocimientos y obteniendo muchos más en el transcurso para potenciar mi desempeño en las actividades en las que deba centrarme.
-                            </p>
-                            <p *ngIf="slide.id === 2" class="outfit-titulosgrisfondo">
-                         
-                             
-                            
-                            </p>
-                            <p *ngIf="slide.id === 3" class="outfit-titulosgrisfondo">
-                              Contenido del slide 3
-                            </p>
-                          </div>
-                        </div>
-                      </ng-template>
-                    </ngb-carousel>
-                  </div>
 
+        <section id="inicio">
+            <section id="sobremi">
+                <div class="mainInfoContainer">
+                    <div class="image-container">
+                        <img class="circular--square imgCenterContainer" src="assets/FOTO_CV.jpg" alt="Retrato.">
+                        <h1 class="center-text">Kevin Giovanni Mahecha Cabuto</h1>
+                    </div>
+                    
+                    <div class="contenedorinformacion">
+                        <h1 class="outfit-titulosblancofondo">Sobre mi</h1>
+                        <hr class="linea-separadora">
+                        <div class="contenedorSobremi cuerpotexto">
+                            {{ sobreMiTexto }}
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
         </section>
-        <section id="acerca-des">
-            <h2>Sobre mi</h2>
-            <p>Esta es una sección acerca de mí.</p>
-        </section>
-        <section id="contactos">
-            <h2>Contacto</h2>
-            <p>Puedes contactarme a través de este formulario.</p>
-            <form>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre">
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                <br>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+
+
+            <section id="exp">
+                <div class="mainInfoContainer3">
+                    <div class="contenedorinformacion">
+                        <h1 class="outfit-titulosblancofondo">Experiencia</h1>
+                        <div class="experiencia">
+                            <img class="imgs" src="assets/java.png" alt="Imagen 4" style="width: 12vh" />
+                            <img class="imgs" src="assets/sqlite.png" alt="Imagen 1" style="width: 20vh" />
+                            <img class="imgs" src="assets/firebase.png" alt="Imagen 2" style="width: 20vh" />
+                            <img class="imgs" src="assets/androidstudio.png" alt="Imagen 3" style="width: 12vh" />
+                            <img class="imgs" src="assets/exporeact.png" alt="Imagen 5" style="width: 25vh" />
+                            <img class="imgs" src="assets/playstore.png" alt="Imagen 4" style="width: 10vh" />
+                            <img class="imgs" src="assets/aws.png" alt="Imagen 6" style="width: 35vh" />
+
+                            <div class="experiencias">
+                                <ul class="lista-experiencias">
+                                    <li class="experienciastextos" *ngFor="let experiencia of experiencias">
+                                        {{ experiencia }}
+                                    </li>
+                                    <hr class="linea-separadora2">
+                                    <h1 class="outfit-titulosblancofondo2">Proyecto de titulación (Agosto 2023 - Junio 2024)</h1>
+                                    <li class="experienciastextos">
+                                        Desarrollé una aplicación móvil para ayudar a estudiantes a encontrar viviendas.
+                                    </li>
+                                    <li class="experienciastextos">
+                                        Utilicé Firebase Firestore y Firebase Storage para datos y almacenamiento.
+                                    </li>
+                                    <li class="experienciastextos">
+                                        Implementé Google Maps SDK para geolocalización.
+                                    </li>
+                                    <li class="experienciastextos">
+                                        Integré APIs de Google Cloud Vision, Luxand, y AWS para la verificación de identidad por IA.
+                                    </li>
+                                    <li class="experienciastextos">
+                                        Implementé un chat en tiempo real desde cero para facilitar la comunicación.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <section id="conocimientos">
+                <div class="mainInfoContainer3">
+                    <div class="contenedorinformacion">
+                        <h1 class="outfit-titulosblancofondo">Conocimientos</h1>
+                        <div class="contenedorconocimientos">
+                            <ul class="lista-conocimientos">
+                                <li class="conocimiento-item">
+                                    <span class="conocimiento-nombre">Android Studio</span>
+                                    <span class="conocimiento-nivel">
+                                        <span class="barra" style="--nivel: 9;"></span>
+                                    </span>
+                                </li>
+                                <li class="conocimiento-item">
+                                    <span class="conocimiento-nombre">Java</span>
+                                    <span class="conocimiento-nivel">
+                                        <span class="barra" style="--nivel: 9;"></span>
+                                    </span>
+                                </li>
+                                <li class="conocimiento-item">
+                                    <span class="conocimiento-nombre">SQL</span>
+                                    <span class="conocimiento-nivel">
+                                        <span class="barra" style="--nivel: 8;"></span>
+                                    </span>
+                                </li>
+                                <li class="conocimiento-item">
+                                    <span class="conocimiento-nombre">HTML,CSS</span>
+                                    <span class="conocimiento-nivel">
+                                        <span class="barra" style="--nivel: 7;"></span>
+                                    </span>
+                                </li>
+                                <li class="conocimiento-item">
+                                    <span class="conocimiento-nombre">React Native</span>
+                                    <span class="conocimiento-nivel">
+                                        <span class="barra" style="--nivel: 6;"></span>
+                                    </span>
+                                </li>
+                                <li class="conocimiento-item">
+                                    <span class="conocimiento-nombre">JavaScript</span>
+                                    <span class="conocimiento-nivel">
+                                        <span class="barra" style="--nivel: 4;"></span>
+                                    </span>
+                                </li>
+                                <li class="conocimiento-item">
+                                    <span class="conocimiento-nombre">C,C++</span>
+                                    <span class="conocimiento-nivel">
+                                        <span class="barra" style="--nivel: 4;"></span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                     
+                    </div>
+                </div>
+            </section>
+
+            <section id="proyectos">
+                <div class="mainInfoContainer3">
+                    <div class="contenedorinformacionproyectos">
+                        <h1 class="outfit-titulosblancofondo">Proyectos realizados</h1>
+                        <h1 class="outfit-titulosblancofondo3">StudentRent</h1>
+                        <div class="card">
+                            <a href="https://play.google.com/store/apps/details?id=com.mahechasdevelopers.studentrent" target="_blank">
+                              <img src="assets/banner2.png" class="card-img-top" alt="Banner 2">
+                            </a>
+                          </div>
+                        
+                    </div>
+                </div>
+            </section>
     </main>
     <footer>
-        <p>&copy; 2024 Mi Página Web</p>
+        <section id="contacto">
+        <p class="contactotexto">Contacto</p>
+        <p class="textofooter">Teléfono: +52 3318857321</p>
+        <p class="textofooter">
+            Correo: 
+            <a href="mailto:kevinmahecha&#64;outlook.com">kevinmahecha&#64;outlook.com</a>
+        </p>
+        <div class="image-container2">
+          <a [href]="cv" target="_blank" class="contactotexto2">
+            Descargar / Visualizar CV
+          </a>
+          <a href="https://github.com/KevinMahecha12" target="_blank">
+            <img class="circle-image" src="assets/github.png" alt="GitHub" style="width: 55px; height: 55px;">
+          </a>
+        </div>
+        
+        
+        <p class="textofooter">Kevin Giovanni Mahecha Cabuto, Mahecha's Developers. 2024 © Todos los derechos reservados. </p>
+    </section>
     </footer>
 </body>
 </html>
